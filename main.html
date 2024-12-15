@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Expense Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="#user">User Features</a></li>
+                <li><a href="#advanced">Advanced Features</a></li>
+                <li><a href="#admin">Admin Features</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="user">
+        <h2>User Features</h2>
+        <div id="user-info">
+            <button id="set-budget">Set Budget</button>
+            <button id="add-expense">Add Expense</button>
+            <h3>Your Budget: $<span id="budget-amount">0</span></h3>
+            <h3>Total Expenses: $<span id="total-expenses">0</span></h3>
+            <h3>Remaining Budget: $<span id="remaining-budget">0</span></h3>
+        </div>
+
+        <div>
+            <h3>Expense Categories</h3>
+            <div id="categories"></div>
+        </div>
+
+        <h3>Expense Graph</h3>
+        <canvas id="expense-chart" width="400" height="200"></canvas>
+    </section>
+
+    <section id="advanced">
+        <h2>Advanced Features</h2>
+        <button id="set-recurring-expense">Set Recurring Expense</button>
+        <button id="sync-data">Sync Data (Local)</button>
+    </section>
+
+    <section id="admin">
+        <h2>Administrator Features</h2>
+        <button id="manage-users">Manage Users</button>
+    </section>
+
+    <!-- Expense Modal -->
+    <div id="expense-modal" class="modal">
+        <div class="modal-content">
+            <h3>Add New Expense</h3>
+            <form id="expense-form">
+                <input type="number" id="expense-amount" placeholder="Amount" required><br>
+                <input type="text" id="expense-category" placeholder="Category" required><br>
+                <button type="submit">Add Expense</button>
+                <button type="button" id="close-modal">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Expense Tracker</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
